@@ -20,6 +20,7 @@ int main (int, char**) {
     Image* gramaTex = new Image("./assets/grass2.jpg");
     Image* marmoreLiso = new Image("./assets/marble_2.jpg");
     Image* ouro = new Image("./assets/gold.jpg");
+    Image* marmorePreto = new Image("./assets/black_marble.jpg");
     // ----------------------------------------
 
     // OBJETOS
@@ -447,17 +448,49 @@ int main (int, char**) {
 
     MeshWithTexture* goldenIdol = Octahedron::createWithTexture(ouro, 1);
     goldenIdol->applyScale(100, 100, 100);
-    goldenIdol->applyTranslate(0, 200, 0);
-    goldenIdol->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 250, 350));
+    goldenIdol->applyRotateX(-0.7853982);
+    goldenIdol->applyRotateZ(0.7853982);
+    goldenIdol->applyTranslate(30, 200, -370);
+    goldenIdol->setWrapper(new Cylinder(new Vector(30, 200, -370), new Vector(0, 1, 0), 100, 150));
     
-    Mesh* idolBase = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
-    idolBase->applyScale(120, 200, 120);
-    idolBase->applyTranslate(-60, 0, -60);
-    idolBase->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 250, 250));
+    Mesh* idolBase = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmorePreto, 1);
+    idolBase->applyScale(120, 100, 120);
+    idolBase->applyTranslate(0, 100, -400);
+    idolBase->setWrapper(new Cylinder(new Vector(0, 100, -400), new Vector(0, 1, 0), 100, 150));
+
+    Mesh* idolLightBase = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmorePreto, 1);
+    idolLightBase->applyScale(120, 500, 120);
+    idolLightBase->applyTranslate(0, 400, -400);
+    idolLightBase->setWrapper(new Cylinder(new Vector(0, 400, -400), new Vector(0, 1, 0), 500, 150));
 
     MeshWithTexture* basePanteon = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
     basePanteon->applyScale(1000, 100, 2000);
-    basePanteon->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 200, 3000));
+    basePanteon->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 100, 3000));
+
+    MeshWithTexture* degrau1 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
+    degrau1->applyScale(1000, 100, 2500);
+    degrau1->applyTranslate(0, 0, 250);
+    degrau1->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 100, 3000));
+
+    MeshWithTexture* degrau2 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
+    degrau2->applyScale(1000, 100, 2400);
+    degrau2->applyTranslate(0, 100, 200);
+    degrau2->setWrapper(new Cylinder(new Vector(0, 100, 0), new Vector(0, 1, 0), 100, 3000));
+
+    MeshWithTexture* degrau3 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
+    degrau3->applyScale(1000, 100, 2300);
+    degrau3->applyTranslate(0, 200, 150);
+    degrau3->setWrapper(new Cylinder(new Vector(0, 200, 0), new Vector(0, 1, 0), 100, 3000));
+
+    MeshWithTexture* degrau4 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
+    degrau4->applyScale(1000, 100, 2200);
+    degrau4->applyTranslate(0, 300, 100);
+    degrau4->setWrapper(new Cylinder(new Vector(0, 300, 0), new Vector(0, 1, 0), 100, 3000));
+
+    MeshWithTexture* degrau5 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
+    degrau5->applyScale(1000, 100, 2100);
+    degrau5->applyTranslate(0, 400, 50);
+    degrau5->setWrapper(new Cylinder(new Vector(0, 400, 0), new Vector(0, 1, 0), 100, 3000));
 
     Mesh* tetoPanteon = Prism::createWithTexture(marmoreLiso, 0.3);
     tetoPanteon->applyRotateX(-1.570796);
@@ -470,21 +503,21 @@ int main (int, char**) {
     int pilarRadius = 60;
     int pilarHeight = 600;
 
-    Cylinder* pilarFundoPanteon1 = new Cylinder(new Vector(-350, 100, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarFundoPanteon2 = new Cylinder(new Vector(0, 100, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarFundoPanteon3 = new Cylinder(new Vector(350, 100, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarFundoPanteon1 = new Cylinder(new Vector(-350, 600, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarFundoPanteon2 = new Cylinder(new Vector(0, 600, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarFundoPanteon3 = new Cylinder(new Vector(350, 600, -800), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
 
-    Cylinder* pilarEsquerdaPanteon1 = new Cylinder(new Vector(-350, 100, -500), new Vector(0, 1, 0), pilarHeight, pilarRadius, pilarReflectivity, 1);
-    Cylinder* pilarEsquerdaPanteon2 = new Cylinder(new Vector(-350, 100, -200), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarEsquerdaPanteon3 = new Cylinder(new Vector(-350, 100, 100), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarEsquerdaPanteon4 = new Cylinder(new Vector(-350, 100, 400), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarEsquerdaPanteon5 = new Cylinder(new Vector(-350, 100, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarEsquerdaPanteon1 = new Cylinder(new Vector(-350, 600, -500), new Vector(0, 1, 0), pilarHeight, pilarRadius, pilarReflectivity, 1);
+    Cylinder* pilarEsquerdaPanteon2 = new Cylinder(new Vector(-350, 600, -200), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarEsquerdaPanteon3 = new Cylinder(new Vector(-350, 600, 100), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarEsquerdaPanteon4 = new Cylinder(new Vector(-350, 600, 400), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarEsquerdaPanteon5 = new Cylinder(new Vector(-350, 600, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
 
-    Cylinder* pilarDiretaPanteon1 = new Cylinder(new Vector(350, 100, -500), new Vector(0, 1, 0), pilarHeight, pilarRadius, pilarReflectivity, 1);
-    Cylinder* pilarDiretaPanteon2 = new Cylinder(new Vector(350, 100, -200), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarDiretaPanteon3 = new Cylinder(new Vector(350, 100, 100), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarDiretaPanteon4 = new Cylinder(new Vector(350, 100, 400), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
-    Cylinder* pilarDiretaPanteon5 = new Cylinder(new Vector(350, 100, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarDiretaPanteon1 = new Cylinder(new Vector(350, 600, -500), new Vector(0, 1, 0), pilarHeight, pilarRadius, pilarReflectivity, 1);
+    Cylinder* pilarDiretaPanteon2 = new Cylinder(new Vector(350, 600, -200), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarDiretaPanteon3 = new Cylinder(new Vector(350, 600, 100), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarDiretaPanteon4 = new Cylinder(new Vector(350, 600, 400), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+    Cylinder* pilarDiretaPanteon5 = new Cylinder(new Vector(350, 600, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
 
     // Link* linkSandman = new Link("Sandman");
     // linkSandman->addObject(corpoSandman);
@@ -509,33 +542,35 @@ int main (int, char**) {
         new Vector(0.3, 0.3, 0.3),
         new Vector(375, 166, -200)
     );
-    Light* sol = new DirectionalLight(
+    Light* sun = new DirectionalLight(
         new Vector(0.3, 0.3, 0.3),
         new Vector(1, -1, 1)
     );
-    Light* lampada = new SpotLight(
-        new Vector(0.9, 0.9, 0.9), new Vector(0, -1, 0),
-        new Vector(-200, 191, 0), M_PI / 2
+
+    Light* idolLight = new SpotLight(
+        new Vector(0.9, 0.9, 0.9), 
+        new Vector(0, -1, 0), 
+        new Vector(0, 400, -400), M_PI / 4
     );
 
     // CONFIGURAÇÃO DA CENA
-    Sp<Scene> scene = new Scene (
+    Sp<Scene> scene = new Scene(
         60.0, 60.0,
         400, 400,
         50,
         new Color (100, 100, 100, 255)
     );
-    scene->setEnvironmentLight (
-        new Vector (0.3, 0.3, 0.3)
-    );
+
+    scene->setEnvironmentLight(new Vector (0.3, 0.3, 0.3));
 
 
     scene->addObject(grama);
 
-    scene->addObject(goldenIdol);
-    scene->addObject(idolBase);
+    // scene->addObject(goldenIdol);
+    // scene->addObject(idolBase);
+    // scene->addObject(idolLightBase);
     
-    scene->addObject(basePanteon);
+    // scene->addObject(basePanteon);
     
     scene->addObject(pilarFundoPanteon1);
     scene->addObject(pilarFundoPanteon2);
@@ -553,18 +588,25 @@ int main (int, char**) {
     scene->addObject(pilarDiretaPanteon4);
     scene->addObject(pilarDiretaPanteon5);
 
-    scene->addObject(tetoPanteon);
+    // scene->addObject(tetoPanteon);
 
-    scene->addLightSource(sol);
+    scene->addObject(degrau1);
+    scene->addObject(degrau2);
+    scene->addObject(degrau3);
+    scene->addObject(degrau4);
+    scene->addObject(degrau5);
+
+    scene->addLightSource(sun);
+    scene->addLightSource(idolLight);
     // scene->addLightSource(lampada);
     // scene->addLightSource(luzPoste1);
     // scene->addLightSource(luzPoste2);
 
     scene->setBackgroundImage(fundoCeu);
     scene->lookAt(
-        new Vector(0, 400, 400),
-        new Vector(0, 300, -200),
-        new Vector(0, 400, -200)
+        new Vector(-2500, 1000, 2500),
+        new Vector(0, 500, 400),
+        new Vector(0, 1000, 400)
     );
 
     scene->render();

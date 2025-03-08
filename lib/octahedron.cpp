@@ -3,8 +3,8 @@
 Mesh* Octahedron::createInCenter(Vector* reflectivity, double shininness) {
     Mesh* mesh = new Mesh(shininness, reflectivity);
 
-    mesh->addVertex(new Vertex(new Vector(0, 0, 0)));     // 0
-    mesh->addVertex(new Vertex(new Vector(0, 1, 0)));     // 1
+    mesh->addVertex(new Vertex(new Vector(0, 0, 0)));       // 0
+    mesh->addVertex(new Vertex(new Vector(0, 1, 0)));       // 1
     mesh->addVertex(new Vertex(new Vector(-0.5, 0.5, 0)));  // 2
     mesh->addVertex(new Vertex(new Vector(0.5, 0.5, 0)));   // 3
     mesh->addVertex(new Vertex(new Vector(0, 0.5, 0.5)));   // 4
@@ -39,8 +39,8 @@ Mesh* Octahedron::createInCenter(Vector* reflectivity, double shininness) {
 MeshWithTexture* Octahedron::createWithTexture(Image* texture, double shineness) {
     MeshWithTexture* mesh = new MeshWithTexture(texture, shineness);
 
-    mesh->addVertex(new Vertex(new Vector(0, 0, 0)));     // 0
-    mesh->addVertex(new Vertex(new Vector(0, 1, 0)));     // 1
+    mesh->addVertex(new Vertex(new Vector(0, 0, 0)));       // 0
+    mesh->addVertex(new Vertex(new Vector(0, 1, 0)));       // 1
     mesh->addVertex(new Vertex(new Vector(-0.5, 0.5, 0)));  // 2
     mesh->addVertex(new Vertex(new Vector(0.5, 0.5, 0)));   // 3
     mesh->addVertex(new Vertex(new Vector(0, 0.5, 0.5)));   // 4
