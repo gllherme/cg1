@@ -450,22 +450,23 @@ int main (int, char**) {
     goldenIdol->applyScale(100, 100, 100);
     goldenIdol->applyRotateX(-0.7853982);
     goldenIdol->applyRotateZ(0.7853982);
-    goldenIdol->applyTranslate(30, 200, -370);
-    goldenIdol->setWrapper(new Cylinder(new Vector(30, 200, -370), new Vector(0, 1, 0), 100, 150));
+    goldenIdol->applyTranslate(30, 700, -370);
+    goldenIdol->setWrapper(new Cylinder(new Vector(30, 700, -370), new Vector(0, 1, 0), 100, 150));
     
     Mesh* idolBase = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmorePreto, 1);
     idolBase->applyScale(120, 100, 120);
-    idolBase->applyTranslate(0, 100, -400);
-    idolBase->setWrapper(new Cylinder(new Vector(0, 100, -400), new Vector(0, 1, 0), 100, 150));
+    idolBase->applyTranslate(0, 600, -400);
+    idolBase->setWrapper(new Cylinder(new Vector(0, 600, -400), new Vector(0, 1, 0), 100, 150));
 
     Mesh* idolLightBase = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmorePreto, 1);
-    idolLightBase->applyScale(120, 500, 120);
-    idolLightBase->applyTranslate(0, 400, -400);
-    idolLightBase->setWrapper(new Cylinder(new Vector(0, 400, -400), new Vector(0, 1, 0), 500, 150));
+    idolLightBase->applyScale(120, 200, 120);
+    idolLightBase->applyTranslate(0, 900, -400);
+    idolLightBase->setWrapper(new Cylinder(new Vector(0, 900, -400), new Vector(0, 1, 0), 500, 150));
 
     MeshWithTexture* basePanteon = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
     basePanteon->applyScale(1000, 100, 2000);
-    basePanteon->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 100, 3000));
+    basePanteon->applyTranslate(0, 500, 0);
+    basePanteon->setWrapper(new Cylinder(new Vector(0, 500, 0), new Vector(0, 1, 0), 100, 3000));
 
     MeshWithTexture* degrau1 = Cube::createWithTexture(new Vector(0, 0, 0), 1, marmoreLiso, 0.3);
     degrau1->applyScale(1000, 100, 2500);
@@ -496,8 +497,8 @@ int main (int, char**) {
     tetoPanteon->applyRotateX(-1.570796);
     tetoPanteon->applyRotateZ(2.356194);
     tetoPanteon->applyScale(700, 200, -2000);
-    tetoPanteon->applyTranslate(-500, 700, -1000);
-    tetoPanteon->setWrapper(new Cylinder(new Vector(0, 0, 0), new Vector(0, 1, 0), 5000, 5000));
+    tetoPanteon->applyTranslate(-500, 1200, -1000);
+    tetoPanteon->setWrapper(new Cylinder(new Vector(0, 1200, 0), new Vector(0, 1, 0), 200, 2000));
 
     Vector* pilarReflectivity = new Vector(1, 1, 1);
     int pilarRadius = 60;
@@ -518,6 +519,10 @@ int main (int, char**) {
     Cylinder* pilarDiretaPanteon3 = new Cylinder(new Vector(350, 600, 100), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
     Cylinder* pilarDiretaPanteon4 = new Cylinder(new Vector(350, 600, 400), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
     Cylinder* pilarDiretaPanteon5 = new Cylinder(new Vector(350, 600, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
+
+    Cone* montanha1 = new Cone(new Vector(8000, 0, -8000), new Vector(0, 1, 0), 4000, 2000, new Vector(1, 1, 1), 1);
+    Cone* montanha2 = new Cone(new Vector(7000, 0, -9000), new Vector(0, 1, 0), 3000, 1500, new Vector(1, 1, 1), 1);
+    Cone* montanha3 = new Cone(new Vector(9000, 0, -7000), new Vector(0, 1, 0), 3500, 1800, new Vector(1, 1, 1), 1);
 
     // Link* linkSandman = new Link("Sandman");
     // linkSandman->addObject(corpoSandman);
@@ -550,7 +555,7 @@ int main (int, char**) {
     Light* idolLight = new SpotLight(
         new Vector(0.9, 0.9, 0.9), 
         new Vector(0, -1, 0), 
-        new Vector(0, 400, -400), M_PI / 4
+        new Vector(0, 900, -400), M_PI / 6
     );
 
     // CONFIGURAÇÃO DA CENA
@@ -566,11 +571,11 @@ int main (int, char**) {
 
     scene->addObject(grama);
 
-    // scene->addObject(goldenIdol);
-    // scene->addObject(idolBase);
-    // scene->addObject(idolLightBase);
+    scene->addObject(goldenIdol);
+    scene->addObject(idolBase);
+    scene->addObject(idolLightBase);
     
-    // scene->addObject(basePanteon);
+    scene->addObject(basePanteon);
     
     scene->addObject(pilarFundoPanteon1);
     scene->addObject(pilarFundoPanteon2);
@@ -588,13 +593,17 @@ int main (int, char**) {
     scene->addObject(pilarDiretaPanteon4);
     scene->addObject(pilarDiretaPanteon5);
 
-    // scene->addObject(tetoPanteon);
+    scene->addObject(tetoPanteon);
 
     scene->addObject(degrau1);
     scene->addObject(degrau2);
     scene->addObject(degrau3);
     scene->addObject(degrau4);
     scene->addObject(degrau5);
+
+    scene->addObject(montanha1);
+    scene->addObject(montanha2);
+    scene->addObject(montanha3);
 
     scene->addLightSource(sun);
     scene->addLightSource(idolLight);
