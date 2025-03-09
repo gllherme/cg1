@@ -813,7 +813,6 @@ int Interface::showMenu() {
   cout << "2 - Modificar fontes luminosas" << endl;
   cout << "3 - Mudar tipo de projecao" << endl;
   cout << "4 - Picking" << endl;
-  cout << "5 - Transformar links (objetos complexos)" << endl;
   cout << "Escolha a opcao desejada: ";
   cin >> opcao;
 
@@ -833,9 +832,6 @@ void Interface::actionChosen(int opcaoEscolhida) {
       break;
     case 4:
       this->picking();
-      break;
-    case 5:
-      this->transformLinks();
       break;
   }
 }

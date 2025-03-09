@@ -1,0 +1,19 @@
+3 ponto de fuga atrás do templo
+-400 1000 -2000
+0 0 0
+0 1000 0
+
+cena dentro do templo (3 pontos de fuga)
+-300 900 0
+0 700 -400
+0 1000 -400
+
+frente diagonal (2 pontos de fuga)
+-2500 1000 2500
+0 500 400
+0 1000 400
+
+cena frontal (1 ponto de fuga)
+0 700 3000
+0 700 0
+0 1000 0

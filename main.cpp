@@ -94,7 +94,7 @@ int main (int, char**) {
     Cylinder* pilarDiretaPanteon5 = new Cylinder(new Vector(350, 600, 700), new Vector(0, 1, 0), pilarHeight, pilarRadius, new Vector(1, 1, 1), 1);
 
     Cone* montanha1 = new Cone(new Vector(8000, 0, -8000), new Vector(0, 1, 0), 4000, 2000, new Vector(0.15, 0.15, 0.15), 1);
-    Cone* montanha2 = new Cone(new Vector(7000, 0, -9000), new Vector(0, 1, 0), 3000, 1500, new Vector(0.15, 0.15, 0.15), 1);
+    Cone* montanha2 = new Cone(new Vector(6000, 0, -9000), new Vector(0, 1, 0), 3000, 1500, new Vector(0.15, 0.15, 0.15), 1);
     Cone* montanha3 = new Cone(new Vector(9000, 0, -7000), new Vector(0, 1, 0), 3500, 1800, new Vector(0.15, 0.15, 0.15), 1);
 
     Light* luzPosteEsquerdo = new PointLight(
@@ -118,7 +118,7 @@ int main (int, char**) {
 
     Sp<Scene> scene = new Scene(
         60.0, 60.0,
-        400, 400,
+        500, 500,
         50,
         new Color (100, 100, 100, 255)
     );
